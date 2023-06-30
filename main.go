@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/EDDYCJY/go-gin-example/pkg/setting"
-	"github.com/EDDYCJY/go-gin-example/routers"
+	"github.com/vision2best/go-gin-example/pkg/setting"
+	"github.com/vision2best/go-gin-example/routers"
 	"log"
 	"net/http"
 	"os"

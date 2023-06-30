@@ -1,8 +1,8 @@
 package util
 
 import (
-	"github.com/EDDYCJY/go-gin-example/pkg/setting"
 	"github.com/dgrijalva/jwt-go"
+	"github.com/vision2best/go-gin-example/pkg/setting"
 	"time"
 )
 

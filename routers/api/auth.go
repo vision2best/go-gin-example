@@ -1,12 +1,12 @@
 package api
 
 import (
-	"github.com/EDDYCJY/go-gin-example/models"
-	"github.com/EDDYCJY/go-gin-example/pkg/e"
-	"github.com/EDDYCJY/go-gin-example/pkg/logging"
-	"github.com/EDDYCJY/go-gin-example/pkg/util"
 	"github.com/astaxie/beego/validation"
 	"github.com/gin-gonic/gin"
+	"github.com/vision2best/go-gin-example/models"
+	"github.com/vision2best/go-gin-example/pkg/e"
+	"github.com/vision2best/go-gin-example/pkg/logging"
+	"github.com/vision2best/go-gin-example/pkg/util"
 	"net/http"
 )
 

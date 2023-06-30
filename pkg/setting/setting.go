@@ -1,8 +1,8 @@
 package setting
 
 import (
-	"github.com/EDDYCJY/go-gin-example/pkg/logging"
 	"github.com/go-ini/ini"
+	"github.com/vision2best/go-gin-example/pkg/logging"
 	"time"
 )
 
