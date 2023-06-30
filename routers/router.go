@@ -6,8 +6,10 @@ import (
 	"github.com/swaggo/gin-swagger/swaggerFiles"
 	_ "github.com/vision2best/go-gin-example/docs"
 	"github.com/vision2best/go-gin-example/pkg/setting"
+	"github.com/vision2best/go-gin-example/pkg/upload"
 	"github.com/vision2best/go-gin-example/routers/api"
 	v1 "github.com/vision2best/go-gin-example/routers/api/v1"
+	"net/http"
 )
 
 // InitRouter initialize routing information
@@ -16,10 +18,13 @@ func InitRouter() *gin.Engine {
 	r := gin.New()
 	r.Use(gin.Logger())
 	r.Use(gin.Recovery())
-	gin.SetMode(setting.RunMode)
+	gin.SetMode(setting.ServerSetting.RunMode)
+
+	r.StaticFS("/upload/images", http.Dir(upload.GetImageFullPath()))
 
 	r.GET("/auth", api.GetAuth)
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+	r.POST("/upload", api.UploadImage)
 
 	apiV1 := r.Group("/api/v1")
 	//apiV1.Use(jwt.JWT())
