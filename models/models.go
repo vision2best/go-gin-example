@@ -2,12 +2,13 @@ package models
 
 import (
 	"fmt"
+	"github.com/vision2best/go-gin-example/pkg/setting"
+	"log"
+
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
-	"log"
-	"time"
 
-	"github.com/vision2best/go-gin-example/pkg/setting"
+	"time"
 )
 
 var db *gorm.DB
@@ -19,6 +20,7 @@ type Model struct {
 	DeletedOn  int `json:"deleted_on"`
 }
 
+// Setup initializes the database instance
 func Setup() {
 	var err error
 	db, err = gorm.Open(setting.DatabaseSetting.Type, fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8&parseTime=True&loc=Local",
@@ -43,6 +45,7 @@ func Setup() {
 	db.DB().SetMaxOpenConns(100)
 }
 
+// CloseDB closes database connection (unnecessary)
 func CloseDB() {
 	defer db.Close()
 }
