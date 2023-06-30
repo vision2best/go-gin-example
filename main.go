@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
+	"github.com/EDDYCJY/go-gin-example/pkg/logging"
 	"github.com/EDDYCJY/go-gin-example/pkg/setting"
 	"github.com/EDDYCJY/go-gin-example/routers"
 	"github.com/gin-gonic/gin"
-	"log"
 	"net/http"
 )
 
@@ -25,7 +25,7 @@ func main() {
 		MaxHeaderBytes: maxHeaderBytes,
 	}
 
-	log.Printf("[info] start http server listening %s", endPoint)
+	logging.Info("[info] start http server listening %s", endPoint)
 
 	err := s.ListenAndServe()
 	if err != nil {
