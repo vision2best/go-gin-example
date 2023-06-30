@@ -5,7 +5,6 @@ import (
 	ginSwagger "github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
 	_ "github.com/vision2best/go-gin-example/docs"
-	"github.com/vision2best/go-gin-example/middleware/jwt"
 	"github.com/vision2best/go-gin-example/pkg/setting"
 	"github.com/vision2best/go-gin-example/routers/api"
 	v1 "github.com/vision2best/go-gin-example/routers/api/v1"
@@ -23,7 +22,7 @@ func InitRouter() *gin.Engine {
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	apiV1 := r.Group("/api/v1")
-	apiV1.Use(jwt.JWT())
+	//apiV1.Use(jwt.JWT())
 	{
 		//获取标签列表
 		apiV1.GET("/tags", v1.GetTags)
